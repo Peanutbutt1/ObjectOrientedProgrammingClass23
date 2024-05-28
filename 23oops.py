@@ -43,6 +43,34 @@ prakash.class_passing()
 
 # Now if we make another class we can make them interact with each other 
 # Lets make a function where different dance festivals are organised and students can take part in them.
+class Annual_function:
+    def __init__(self, name):
+        self.name = name
+        self.event = {
+            "Veer Savarkar": [],
+            "Bhagat Singh": [],
+            "Nathuram Godse": [],
+            "Mangal Pandey": [],
+            "Subhash Chandra Bose": [],
+            "Chandrashekhar Azad": []
+            }
+    
+    def add_student(self, name, Event_name):
+        count = 0
+        while(count < 2):
+            if name in self.name and Event_name in self.event:
+                self.event[Event_name].appent(name)
+            elif ((name in self.name and Event_name in self.event) == 1):
+                print("No name matched pls try again.")
+                count += 1
+            else:
+                print("Error (too much wrong names)")
+                return 1
+    
+    def get_chart(self, event_name):
+        for student in self.event["Veer Savarkar"]:
+            
+
 
 
 
