@@ -41,6 +41,9 @@ prakash.print_roll_no()
 prakash.print_age()
 prakash.class_passing()
 
+# Now if we make another class we can make them interact with each other 
+# Lets make a function where different dance festivals are organised and students can take part in them.
+
 
 
 
