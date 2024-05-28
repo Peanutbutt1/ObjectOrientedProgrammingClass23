@@ -69,6 +69,8 @@ class Annual_function:
     
     def get_chart(self, event_name):
         for student in self.event["Veer Savarkar"]:
+            print("Students in Event- Veer Savarkar are " + self.event["Veer Savarkar"])
+            
             
 
 
