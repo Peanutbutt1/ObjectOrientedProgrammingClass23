@@ -23,24 +23,6 @@ class Student:
         self.age = self.age + 1
         print(f"New age is {self.age} and new class/standard is: {self.std}.")
 
-# creating an instance of the student class
-rakesh = Student("Rohan", 1005, 16, 8)
-
-# calling the methods to print details
-rakesh.print_roll_no()
-rakesh.print_age()
-rakesh.class_passing()
-rakesh.class_passing()
-rakesh.class_passing()
-
-# creating another instance of the student class
-prakash = Student("Ram Prakash", 1007, 18, 10)
-
-# calling the methods to print details
-prakash.print_roll_no()
-prakash.print_age()
-prakash.class_passing()
-
 # Now if we make another class we can make them interact with each other 
 # Lets make a function where different dance festivals are organised and students can take part in them.
 class Annual_function:
@@ -70,7 +52,45 @@ class Annual_function:
     def get_chart(self, event_name):
         for student in self.event["Veer Savarkar"]:
             print("Students in Event- Veer Savarkar are " + self.event["Veer Savarkar"])
-            
+
+S1 = Student("S1", 1001, 16, 8)
+S2 = Student("S2", 1002, 17, 8)
+S3 = Student("S3", 1003, 17, 8)
+S4 = Student("S4", 1004, 19, 9)
+S5 = Student("S5", 1005, 17, 8)
+S6 = Student("S6", 1006, 16, 8)
+S7 = Student("S7", 1007, 18, 9)
+S8 = Student("S8", 1008, 19, 8)
+S9 = Student("S9", 1009, 16, 9)
+S10 = Student("S10", 1010, 15, 8)
+S11 = Student("S11", 1011, 17, 9)
+S12 = Student("S12", 1012, 16, 9)
+
+
+Function = Annual_function()
+
+
+# creating an instance of the student class
+#rakesh = Student("Rohan", 1005, 16, 8)
+
+# calling the methods to print details
+#rakesh.print_roll_no()
+#rakesh.print_age()
+#rakesh.class_passing()
+#rakesh.class_passing()
+#rakesh.class_passing()
+
+# creating another instance of the student class
+#prakash = Student("Ram Prakash", 1007, 18, 10)
+
+# calling the methods to print details
+#prakash.print_roll_no()
+#prakash.print_age()
+#prakash.class_passing()
+
+
+
+
             
 
 
