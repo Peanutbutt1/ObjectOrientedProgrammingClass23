@@ -19,12 +19,11 @@ class Student:
         print(f"Student's age is {self.age}")
 
     def class_passing(self):
-        self.std = self.std + 1
-        self.age = self.age + 1
+        self.std += 1
+        self.age += 1
         print(f"New age is {self.age} and new class/standard is: {self.std}.")
 
-# Now if we make another class we can make them interact with each other 
-# Lets make a function where different dance festivals are organised and students can take part in them.
+
 class Annual_function:
     def __init__(self, name):
         self.name = name
@@ -35,24 +34,24 @@ class Annual_function:
             "Mangal Pandey": [],
             "Subhash Chandra Bose": [],
             "Chandrashekhar Azad": []
-            }
-    
-    def add_student(self, name, Event_name):
-        count = 0
-        while(count < 2):
-            if name in self.name and Event_name in self.event:
-                self.event[Event_name].appent(name)
-            elif ((name in self.name and Event_name in self.event) == 1):
-                print("No name matched pls try again.")
-                count += 1
-            else:
-                print("Error (too much wrong names)")
-                return 1
-    
-    def get_chart(self, event_name):
-        for student in self.event["Veer Savarkar"]:
-            print("Students in Event- Veer Savarkar are " + self.event["Veer Savarkar"])
+        }
 
+    def add_student(self, student, event_name):
+        if event_name in self.event:
+            self.event[event_name].append(student)
+        else:
+            print("Error: Event name does not exist.")
+
+    def get_chart(self, event_name):
+        if event_name in self.event:
+            print(f"Students in Event - {event_name}:")
+            for student in self.event[event_name]:
+                print(student.name)
+        else:
+            print("Error: Event name does not exist.")
+
+
+# Create Student objects
 S1 = Student("S1", 1001, 16, 8)
 S2 = Student("S2", 1002, 17, 8)
 S3 = Student("S3", 1003, 17, 8)
@@ -66,8 +65,16 @@ S10 = Student("S10", 1010, 15, 8)
 S11 = Student("S11", 1011, 17, 9)
 S12 = Student("S12", 1012, 16, 9)
 
+# Create Annual_function object
+Function = Annual_function(2024)
 
-Function = Annual_function()
+# Add students to events
+Function.add_student(S1, "Veer Savarkar")
+Function.add_student(S2, "Veer Savarkar")
+
+# Get chart of students in an event
+Function.get_chart("Veer Savarkar")
+
 
 
 # creating an instance of the student class
