@@ -25,6 +25,9 @@ class Teacher:
         self.name = name
         self.sub = sub
         
+    def ptasks(self):
+        print(f"This is the teaher {self.name} about who we don't know much about.")
+        
 class Class_teacher(Teacher):#we can now give lower level classes, methods of upper level class
 
     def ptasks(self):
@@ -34,3 +37,39 @@ class Subject_teacher(Teacher):#same here.(ln 28)
         
     def ptasks(self):
         print(f"This is the subject teacher {self.name} and he teaches. ")
+        
+# Now if a class doesn't have the attribute we asked it will take it from upper level class
+class Subst(Teacher):
+    pass
+
+# Now if a class have some more or different attributes from parent of upper class-
+class Principle(Teacher):
+    def __init__(self, name, sub, office):
+        #we should't do self.name = name b\c it can do sth right if we have a big and 
+        # multiple shared work or a project b\c maybe upper level class is accessing some database so doing
+        # it again will cause disturbance. So we do it like-
+        super().__init__(name, sub)
+        self.office = office 
+
+    def ptasks(self):
+        print(f"This is the principle {self.name} he doesn't teach any subjects but he works on office {self.office}.")
+        
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
