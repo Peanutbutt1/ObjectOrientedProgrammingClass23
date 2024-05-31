@@ -71,9 +71,11 @@ Function = Annual_function(2024)
 # Add students to events
 Function.add_student(S1, "Veer Savarkar")
 Function.add_student(S2, "Veer Savarkar")
+Function.add_student(S3, "Bhagat Singh")
 
 # Get chart of students in an event
 Function.get_chart("Veer Savarkar")
+Function.get_chart("Bhagat Singh")
 
 
 
