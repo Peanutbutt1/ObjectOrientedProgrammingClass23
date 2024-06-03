@@ -1,0 +1,5 @@
+from Mymodule import Math1
+
+x = 200
+y = 1200
+print(Math1.percentage1(x, y))
