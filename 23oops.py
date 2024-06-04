@@ -1,6 +1,7 @@
-# 23.Object orientated programming in Python
-# Introduction: As we have functions of different classes already in python, but we didn't see them as classes
+# 23.Object orientated programming in Python (Part 1)ss
+# Introduction: As we have functions of different classes already in python, but we didn't see them as classes -
 # till now. Like: String, int, char, list, tuple, bool, etc.
+# Class provide a rather organised and easy to handle code.
 # These classes have their own methods and attributes just like we are going to make in our declared classes.
 # Syntax: To create an object we will use 'class' keyword, and then a variable name for our object class.
 # Then within(indented) that object class we will define any number of methods which that object can perform
@@ -10,18 +11,27 @@ class Student:
         self.name = formal_name
         self.roll_no = roll_no
         self.age = age
-        self.std = class_
+        self.class_ = class_
 
-    def print_roll_no(self):
-        print(f"The student named {self.name} of class {self.std} has a roll no of {self.roll_no}.")
+    def details(self):
+        print(f"Hi! there this is student {self.name}, roll no- {self.roll_no}, age {self.age} and class {self.class_}")
 
-    def print_age(self):
-        print(f"Student's age is {self.age}")
-
-    def class_passing(self):
-        self.std += 1
+    def passing(self):
         self.age += 1
-        print(f"New age is {self.age} and new class/standard is: {self.std}.")
+        self.class_ += 1
+
+    def __del__(self):
+        pass
+
+    def sp_details(self, det):
+        if det == "name":
+            print(self.name)
+        elif det == "age":
+            print(self.age)
+        elif det == "roll_no":
+            print(self.roll_no)
+        elif det == "class_":
+            print(self.class_)
 
 
 class Annual_function:
@@ -36,22 +46,22 @@ class Annual_function:
             "Chandrashekhar Azad": []
         }
 
-    def add_student(self, student, event_name):
+    def add_student(self, S, event_name):
         if event_name in self.event:
-            self.event[event_name].append(student)
+            self.event[event_name].append(S)
         else:
-            print("Error: Event name does not exist.")
+            print("Error! event name doesn't exist.")
 
     def get_chart(self, event_name):
         if event_name in self.event:
-            print(f"Students in Event - {event_name}:")
-            for student in self.event[event_name]:
-                print(student.name)
+            print(f"Students in event {event_name}: ")
+            for S in self.event[event_name]:
+                print(S.name + ", Whose class is ", end='')
+                S.sp_details("class_")
         else:
-            print("Error: Event name does not exist.")
+            print("Event doesn't exist.")
 
 
-# Create Student objects
 S1 = Student("S1", 1001, 16, 8)
 S2 = Student("S2", 1002, 17, 8)
 S3 = Student("S3", 1003, 17, 8)
@@ -65,37 +75,33 @@ S10 = Student("S10", 1010, 15, 8)
 S11 = Student("S11", 1011, 17, 9)
 S12 = Student("S12", 1012, 16, 9)
 
-# Create Annual_function object
+S1.details()
+S2.details()
+S5.details()
+S1.passing()
+S1.passing()
+S1.passing()
+S1.passing()
+print("After passing new details: ")
+S1.details()
+S1.details()
+del S7
+
 Function = Annual_function(2024)
 
-# Add students to events
 Function.add_student(S1, "Veer Savarkar")
 Function.add_student(S2, "Veer Savarkar")
 Function.add_student(S3, "Bhagat Singh")
+Function.add_student(S6, "Mangal Pandey")
+Function.add_student(S5, "Bhagat Singh")
+Function.add_student(S9, "Bhagat Singh")
+Function.add_student(S8, "Mangal Pandey")
+Function.add_student(S10, "Veer Savarkar")
 
-# Get chart of students in an event
+
 Function.get_chart("Veer Savarkar")
 Function.get_chart("Bhagat Singh")
-
-
-
-# creating an instance of the student class
-#rakesh = Student("Rohan", 1005, 16, 8)
-
-# calling the methods to print details
-#rakesh.print_roll_no()
-#rakesh.print_age()
-#rakesh.class_passing()
-#rakesh.class_passing()
-#rakesh.class_passing()
-
-# creating another instance of the student class
-#prakash = Student("Ram Prakash", 1007, 18, 10)
-
-# calling the methods to print details
-#prakash.print_roll_no()
-#prakash.print_age()
-#prakash.class_passing()
+Function.get_chart("Mangal Pandey")
 
 
 
