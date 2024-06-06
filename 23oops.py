@@ -19,6 +19,7 @@ class Student:
     def passing(self):
         self.age += 1
         self.class_ += 1
+        self.details()
 
     def __del__(self):
         pass
