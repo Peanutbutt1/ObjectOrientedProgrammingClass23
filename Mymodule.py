@@ -26,3 +26,6 @@ class Math1:
     def percentage1(x, y):
         return round((x / y) * 100, 2)
     
+    @staticmethod
+    def add19(x, y):
+        return (x, y) + 19
